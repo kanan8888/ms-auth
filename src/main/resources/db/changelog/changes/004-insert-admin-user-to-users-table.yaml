@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004
+      author: kanan8888
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  valueComputed: gen_random_uuid()
+              - column:
+                  name: email
+                  value: firstadmin@gmail.com
+              - column:
+                  name: password
+                  value: $2a$10$10HJZ/gtNrN1DI.p/kx5iekUgek/OOKi6iv6d0lPUf6zrxsFl4d3q
+              - column:
+                  name: role
+                  value: ADMIN
+              - column:
+                  name: created_at
+                  valueComputed: NOW()
+              - column:
+                  name: updated_at
+                  valueComputed: NOW()
